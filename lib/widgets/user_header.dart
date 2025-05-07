@@ -1,4 +1,5 @@
 import 'package:coffee_app/Core/I18n/messages.dart';
+import 'package:coffee_app/screen/login/login.dart';
 import 'package:coffee_app/screen/search/search_page.dart';
 import 'package:coffee_app/utilities/colors.dart';
 import 'package:coffee_app/widgets/bottom_navigation.dart';
@@ -73,12 +74,19 @@ class UserHeader extends StatelessWidget {
                   },
                 ),
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: Image.asset(
-                  'assets/images/team-member.jpg',
-                  width: 45,
-                  height: 45,
+              GestureDetector(
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Login())),
+                child: ClipOval(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50)
+                    ),
+                    child: Image.asset(
+                      'assets/images/team-member.jpg',
+                      width: 45,
+                      height: 45,
+                    ),
+                  ),
                 ),
               ),
             ],

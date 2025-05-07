@@ -1,5 +1,6 @@
 import 'package:coffee_app/Core/I18n/translations.dart';
 import 'package:coffee_app/cart_controller.dart';
+import 'package:coffee_app/screen/login/login.dart';
 import 'package:coffee_app/widgets/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           if (snapshot.data == true) {
             return Directionality(
               textDirection: Get.locale?.languageCode == 'fa' ? TextDirection.rtl : TextDirection.ltr,
-              child: const BottomNavigation(),
+              child: BottomNavigation(),
             );
           } else {
             return const Center(child: CircularProgressIndicator());
